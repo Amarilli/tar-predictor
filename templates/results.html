@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <title>Prediction Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("{{ url_for('static', filename='images/background_austin.jpeg') }}");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+        .result-container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for readability */
+        }
+        .button-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .button.primary {
+            background-color: #ffffff;
+            color: #007bff;
+            border: 2px solid #007bff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            display: inline-block;
+        }
+        .button.primary:hover {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: transparent;
+            border-top: 1px solid transparent;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <header class="container">
+        <h1>Prediction Results</h1>
+    </header>
+    <main class="container">
+        <section class="result-container" id="resultSection" style="background-color: 
+            {% if prediction == 'Not Rated' %}
+                grey;
+            {% elif prediction == 'A' %}
+                lightgreen;
+            {% elif prediction == 'B' %}
+                orange;
+            {% else %}
+                red;
+            {% endif %}">
+            <h2>Results</h2>
+            <p><strong>Prediction:</strong> <span id="predictionResult">{{ prediction }}</span></p>
+            <p><strong>Message:</strong> <span id="messageResult">{{ message }}</span></p>
+        </section>
+        <div class="button-container">
+            <a href="/" class="button primary">Make Another Prediction</a>
+        </div>
+    </main>
+    <footer class="container">
+        <small>Privacy Policy • Terms of Use</small>
+    </footer>
+</body>
+</html>
+
