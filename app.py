@@ -6,8 +6,6 @@ import tensorflow as tf
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.model_selection import train_test_split
 import joblib 
-import logging
-logging.basicConfig(level=logging.INFO)
 
 
 app = Flask(__name__)
