@@ -1,0 +1,6 @@
+runtime: python311  
+entrypoint: gunicorn -b :$PORT app:app  # This matches your Procfile
+
+handlers:
+- url: /.*
+  script: auto
