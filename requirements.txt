@@ -125,7 +125,6 @@ google-pasta==0.2.0
 graphviz==0.20.3
 greenlet @ file:///Users/cbousseau/work/recipes/ci_py311/greenlet_1677926210411/work
 grpcio==1.62.1
-gunicorn
 h11==0.14.0
 h5py==3.10.0
 HeapDict @ file:///Users/ktietz/demo/mc3/conda-bld/heapdict_1630598515714/work
